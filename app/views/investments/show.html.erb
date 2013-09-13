@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="span10 offset1">
+    <div class="text-center">
+      <%= render 'form' %>
+      <p> Return on investment is: 
+        <b>
+          <%= @investment.present? ? @investment.roi_amount||0.0 : 0.0 %>%
+        </b> with a <%= @investment && @investment.roi_amount||0.0 > 0 ? "profit" : "loss" %> of 
+        <b>
+          <%= @investment.present? ? @investment.sf_profit||0.0 : 0.0 %>
+        </b> per square feet.
+      </p>
+    </div>
+  </div>
+</div> 

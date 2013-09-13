@@ -1,0 +1,28 @@
+<%= form_for(@investment) do |f| %>
+  <% if @investment && @investment.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% @investment.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+          
+  <div class="field">
+    <%= f.label :square_feet %><br>
+    <%= f.text_field :square_feet %>
+  </div>
+  <div class="field">
+    <%= f.label :cost_of_property %><br>
+    <%= f.text_field :cost_of_property %>
+  </div>
+  <div class="field">
+    <%= f.label :sale_value_of_property %><br>
+    <%= f.text_field :sale_value %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Calculate", class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
